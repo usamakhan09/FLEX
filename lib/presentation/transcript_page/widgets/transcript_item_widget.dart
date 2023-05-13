@@ -20,13 +20,13 @@ class TranscriptItemWidget extends StatelessWidget {
           padding: getPadding(
             bottom: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.codeTxt.value,
+          child: 
+            Text(
+              transcriptItemModelObj.codeTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
-            ),
+          
           ),
         ),
         Spacer(),
@@ -35,13 +35,12 @@ class TranscriptItemWidget extends StatelessWidget {
             left: 7,
             bottom: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.coursenameTxt.value,
+          child: Text(
+              transcriptItemModelObj.coursenameTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
-            ),
+            
           ),
         ),
         Spacer(),
@@ -50,13 +49,13 @@ class TranscriptItemWidget extends StatelessWidget {
             left: 7,
             bottom: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.sectionTxt.value,
+          child:
+             Text(
+              transcriptItemModelObj.sectionTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
-            ),
+          
           ),
         ),
         Spacer(),
@@ -65,13 +64,13 @@ class TranscriptItemWidget extends StatelessWidget {
             left: 7,
             bottom: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.crdhrsTxt.value,
+          child:
+            Text(
+              transcriptItemModelObj.crdhrsTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
-            ),
+          
           ),
         ),
         Spacer(),
@@ -80,14 +79,14 @@ class TranscriptItemWidget extends StatelessWidget {
             left: 6,
             bottom: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.gradeTxt.value,
+          child: 
+             Text(
+              transcriptItemModelObj.gradeTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
             ),
-          ),
+          
         ),
         Spacer(),
         Padding(
@@ -95,13 +94,13 @@ class TranscriptItemWidget extends StatelessWidget {
             left: 7,
             bottom: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.pointsTxt.value,
+          child: 
+            Text(
+              transcriptItemModelObj.pointsTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
-            ),
+          
           ),
         ),
         Spacer(),
@@ -110,13 +109,13 @@ class TranscriptItemWidget extends StatelessWidget {
             left: 6,
             top: 1,
           ),
-          child: Obx(
-            () => Text(
-              transcriptItemModelObj.typeTxt.value,
+          child: 
+             Text(
+              transcriptItemModelObj.typeTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium12,
-            ),
+          
           ),
         ),
       ],

@@ -1,3 +1,5 @@
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 import 'controller/sign_in_controller.dart';
 import 'package:flex2/core/app_export.dart';
 import 'package:flex2/core/utils/validation_functions.dart';
@@ -73,11 +75,18 @@ class SignInScreen extends GetWidget<SignInController> {
                                   return null;
                                 },
                                 isObscureText: true),
-                            CustomButton(
-                                height: getVerticalSize(50),
-                                text: "lbl_sign_in".tr,
-                                margin: getMargin(top: 51),
-                                onTap: onTapSignin),
+                            Obx(() => controller.isLoading.value
+                                  ? const SpinKitCircle(
+                                color: Colors.black,
+                                size: 40,
+                              )
+                                  :  CustomButton(
+                                  height: getVerticalSize(50),
+                                  text: "lbl_sign_in".tr,
+                                  margin: getMargin(top: 51),
+                                  onTap: ()async{
+                                   await controller.signIn();
+                                  }),),
                             GestureDetector(
                                 onTap: () {
                                   onTapTxtForgetpassword();
@@ -96,7 +105,7 @@ class SignInScreen extends GetWidget<SignInController> {
   }
 
   onTapSignin() {
-    Get.toNamed(AppRoutes.homeContainerScreen);
+    
   }
 
   onTapTxtForgetpassword() {

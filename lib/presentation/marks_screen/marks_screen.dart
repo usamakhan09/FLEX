@@ -72,7 +72,7 @@ class MarksScreen extends GetWidget<MarksController> {
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              CustomDropDown(
+                             Obx(()=> CustomDropDown(
                                   width: getHorizontalSize(400),
                                   focusNode: FocusNode(),
                                   icon: Container(
@@ -84,20 +84,26 @@ class MarksScreen extends GetWidget<MarksController> {
                                           svgPath: ImageConstant.imgArrowdown)),
                                   hintText: "COURSE NAME".tr,
                                   items: controller
-                                      .marksModelObj.value.dropdownItemList,
+                                      .marksModelObj.value.dropdownItemList.value,
                                   onChanged: (value) {
                                     controller.onSelected(value);
                                   }),
-                              CustomTextFormField(
+                            
+                            ),
+                             
+                             Obx(()=> CustomTextFormField(
+                                readonly: true,
                                   focusNode: FocusNode(),
                                   controller:
                                       controller.courseheadingController,
-                                  hintText: "msg_design_and_analysis2".tr,
+                                  hintText: controller.headingTxt.value,
                                   margin: getMargin(top: 13),
                                   variant: TextFormFieldVariant.FillTeal50,
                                   padding: TextFormFieldPadding.PaddingAll18,
                                   fontStyle:
                                       TextFormFieldFontStyle.PoppinsMedium18),
+                             
+                             ),
                               Card(
                                   clipBehavior: Clip.antiAlias,
                                   elevation: 0,
@@ -109,8 +115,9 @@ class MarksScreen extends GetWidget<MarksController> {
                                           width: getHorizontalSize(1)),
                                       borderRadius:
                                           BorderRadiusStyle.roundedBorder10),
-                                  child: Container(
-                                      height: getVerticalSize(452),
+                                  child: 
+                                  Container(
+                                      height: getVerticalSize(652),
                                       width: getHorizontalSize(385),
                                       padding: getPadding(
                                           left: 12,
@@ -124,54 +131,19 @@ class MarksScreen extends GetWidget<MarksController> {
                                       child: Stack(
                                           alignment: Alignment.topCenter,
                                           children: [
-                                            Align(
-                                                alignment: Alignment.topCenter,
-                                                child: Container(
-                                                    margin: getMargin(
-                                                        left: 1,
-                                                        top: 41,
-                                                        bottom: 251),
-                                                    padding: getPadding(
-                                                        left: 11,
-                                                        top: 20,
-                                                        right: 11,
-                                                        bottom: 10),
-                                                    decoration: AppDecoration
-                                                        .outlineGray400
-                                                        .copyWith(
-                                                            borderRadius:
-                                                                BorderRadiusStyle
-                                                                    .roundedBorder10),
-                                                    child: Obx(() =>
-                                                        ListView.separated(
-                                                            physics:
-                                                                NeverScrollableScrollPhysics(),
-                                                            shrinkWrap: true,
-                                                            separatorBuilder:
-                                                                (context, index) {
-                                                              return SizedBox(
-                                                                  height:
-                                                                      getVerticalSize(
-                                                                          4));
-                                                            },
-                                                            itemCount: controller
-                                                                .marksModelObj
-                                                                .value
-                                                                .marksItemList
-                                                                .length,
-                                                            itemBuilder:
-                                                                (context,
-                                                                    index) {
-                                                              MarksItemModel
-                                                                  model =
-                                                                  controller
-                                                                      .marksModelObj
-                                                                      .value
-                                                                      .marksItemList[index];
-                                                              return MarksItemWidget(
-                                                                  model);
-                                                            })))),
-                                            CustomTextFormField(
+                                          
+                                            SingleChildScrollView(
+                                              child: Align(
+                                                  alignment: Alignment.topCenter,
+                                                  child: 
+                                                
+                                                      Column(
+                                                        children: [
+                                                          
+                                                    Column(
+                                                      children: [
+                                                          CustomTextFormField(
+                                              readonly: true,
                                                 width: getHorizontalSize(360),
                                                 focusNode: FocusNode(),
                                                 controller: controller
@@ -184,8 +156,277 @@ class MarksScreen extends GetWidget<MarksController> {
                                                 fontStyle:
                                                     TextFormFieldFontStyle
                                                         .PoppinsMedium16,
-                                                alignment: Alignment.topCenter)
-                                          ]))),
+                                                alignment: Alignment.topCenter),
+                                                        Container(
+                                                            margin: getMargin(
+                                                                left: 1,
+                                                                top: 10,
+                                                               ),
+                                                            padding: getPadding(
+                                                                left: 11,
+                                                               
+                                                                right: 11,
+                                                                bottom: 5),
+                                                            decoration: AppDecoration
+                                                                .outlineGray400
+                                                                .copyWith(
+                                                                    borderRadius:
+                                                                        BorderRadiusStyle
+                                                                            .roundedBorder10),
+                                                            child: Obx(() =>
+                                                                ListView.separated(
+                                                                    physics:
+                                                                        NeverScrollableScrollPhysics(),
+                                                                    shrinkWrap: true,
+                                                                    separatorBuilder:
+                                                                        (context, index) {
+                                                                      return SizedBox(
+                                                                          height:
+                                                                              getVerticalSize(
+                                                                                  4));
+                                                                    },
+                                                                    itemCount: controller
+                                                                        .marksModelObj
+                                                                        .value
+                                                                        .assignmentmarksItemList
+                                                                        .length,
+                                                                    itemBuilder:
+                                                                        (context,
+                                                                            index) {
+                                                                      MarksItemModel
+                                                                          model =
+                                                                          controller
+                                                                              .marksModelObj
+                                                                              .value
+                                                                              .assignmentmarksItemList[index];
+                                                                      return MarksItemWidget(
+                                                                          model);
+                                                                    })
+                                                                    )
+                                                                    ),
+                                                      ],
+                                                    ),
+                                                     Column(
+                                                      children: [
+                                                        SizedBox(height: 10,),
+                                                          CustomTextFormField(
+                                              readonly: true,
+                                                width: getHorizontalSize(360),
+                                                focusNode: FocusNode(),
+                                                controller: controller
+                                                    .markslistController,
+                                                hintText: "Sessional I".tr,
+                                                variant: TextFormFieldVariant
+                                                    .OutlineIndigo100_1,
+                                                padding: TextFormFieldPadding
+                                                    .PaddingAll18,
+                                                fontStyle:
+                                                    TextFormFieldFontStyle
+                                                        .PoppinsMedium16,
+                                                alignment: Alignment.topCenter),
+                                                        Container(
+                                                            margin: getMargin(
+                                                                left: 1,
+                                                                top: 10,
+                                                               ),
+                                                            padding: getPadding(
+                                                                left: 11,
+                                                               
+                                                                right: 11,
+                                                                bottom: 5),
+                                                            decoration: AppDecoration
+                                                                .outlineGray400
+                                                                .copyWith(
+                                                                    borderRadius:
+                                                                        BorderRadiusStyle
+                                                                            .roundedBorder10),
+                                                            child: Obx(() =>
+                                                                ListView.separated(
+                                                                    physics:
+                                                                        NeverScrollableScrollPhysics(),
+                                                                    shrinkWrap: true,
+                                                                    separatorBuilder:
+                                                                        (context, index) {
+                                                                      return SizedBox(
+                                                                          height:
+                                                                              getVerticalSize(
+                                                                                  4));
+                                                                    },
+                                                                    itemCount: controller
+                                                                        .marksModelObj
+                                                                        .value
+                                                                        .sessional1
+                                                                        .length,
+                                                                    itemBuilder:
+                                                                        (context,
+                                                                            index) {
+                                                                      MarksItemModel
+                                                                          model =
+                                                                          controller
+                                                                              .marksModelObj
+                                                                              .value
+                                                                              .sessional1[index];
+                                                                      return MarksItemWidget(
+                                                                          model);
+                                                                    })
+                                                                    )
+                                                                    ),
+                                                      ],
+                                                    ),
+                                                   Column(
+                                                      children: [
+                                                        SizedBox(height: 10,),
+                                                          CustomTextFormField(
+                                              readonly: true,
+                                                width: getHorizontalSize(360),
+                                                focusNode: FocusNode(),
+                                                controller: controller
+                                                    .markslistController,
+                                                hintText: "Sessional II".tr,
+                                                variant: TextFormFieldVariant
+                                                    .OutlineIndigo100_1,
+                                                padding: TextFormFieldPadding
+                                                    .PaddingAll18,
+                                                fontStyle:
+                                                    TextFormFieldFontStyle
+                                                        .PoppinsMedium16,
+                                                alignment: Alignment.topCenter),
+                                                        Container(
+                                                            margin: getMargin(
+                                                                left: 1,
+                                                                top: 10,
+                                                               ),
+                                                            padding: getPadding(
+                                                                left: 11,
+                                                               
+                                                                right: 11,
+                                                                bottom: 5),
+                                                            decoration: AppDecoration
+                                                                .outlineGray400
+                                                                .copyWith(
+                                                                    borderRadius:
+                                                                        BorderRadiusStyle
+                                                                            .roundedBorder10),
+                                                            child: Obx(() =>
+                                                                ListView.separated(
+                                                                    physics:
+                                                                        NeverScrollableScrollPhysics(),
+                                                                    shrinkWrap: true,
+                                                                    separatorBuilder:
+                                                                        (context, index) {
+                                                                      return SizedBox(
+                                                                          height:
+                                                                              getVerticalSize(
+                                                                                  4));
+                                                                    },
+                                                                    itemCount: controller
+                                                                        .marksModelObj
+                                                                        .value
+                                                                        .sessional2
+                                                                        .length,
+                                                                    itemBuilder:
+                                                                        (context,
+                                                                            index) {
+                                                                      MarksItemModel
+                                                                          model =
+                                                                          controller
+                                                                              .marksModelObj
+                                                                              .value
+                                                                              .sessional2[index];
+                                                                      return MarksItemWidget(
+                                                                          model);
+                                                                    })
+                                                                    )
+                                                                    ),
+                                                      ],
+                                                    ),
+                                                 
+                                                    Column(
+                                                      children: [
+                                                        SizedBox(height: 10,),
+                                                          CustomTextFormField(
+                                              readonly: true,
+                                                width: getHorizontalSize(360),
+                                                focusNode: FocusNode(),
+                                                controller: controller
+                                                    .markslistController,
+                                                hintText: "Final".tr,
+                                                variant: TextFormFieldVariant
+                                                    .OutlineIndigo100_1,
+                                                padding: TextFormFieldPadding
+                                                    .PaddingAll18,
+                                                fontStyle:
+                                                    TextFormFieldFontStyle
+                                                        .PoppinsMedium16,
+                                                alignment: Alignment.topCenter),
+                                                        Container(
+                                                            margin: getMargin(
+                                                                left: 1,
+                                                                top: 10,
+                                                               ),
+                                                            padding: getPadding(
+                                                                left: 11,
+                                                               
+                                                                right: 11,
+                                                                bottom: 5),
+                                                            decoration: AppDecoration
+                                                                .outlineGray400
+                                                                .copyWith(
+                                                                    borderRadius:
+                                                                        BorderRadiusStyle
+                                                                            .roundedBorder10),
+                                                            child: Obx(() =>
+                                                                ListView.separated(
+                                                                    physics:
+                                                                        NeverScrollableScrollPhysics(),
+                                                                    shrinkWrap: true,
+                                                                    separatorBuilder:
+                                                                        (context, index) {
+                                                                      return SizedBox(
+                                                                          height:
+                                                                              getVerticalSize(
+                                                                                  4));
+                                                                    },
+                                                                    itemCount: controller
+                                                                        .marksModelObj
+                                                                        .value
+                                                                        .finalmarks
+                                                                        .length,
+                                                                    itemBuilder:
+                                                                        (context,
+                                                                            index) {
+                                                                      MarksItemModel
+                                                                          model =
+                                                                          controller
+                                                                              .marksModelObj
+                                                                              .value
+                                                                              .finalmarks[index];
+                                                                      return MarksItemWidget(
+                                                                          model);
+                                                                    })
+                                                                    )
+                                                                    ),
+                                                      ],
+                                                    ),
+                                                         
+                                                        ],
+                                                      ),
+                                                   
+                                                 
+                                                          
+                                                           
+                                                              ),
+                                            ),
+                                         
+                                         
+                                          
+                                          ])
+                                          )
+                                     
+                                     
+                                          ),
+                              
+                              
                               //         CustomDropDown(
                               // width:  getHorizontalSize(147),
                               // focusNode: FocusNode(),
@@ -202,6 +443,7 @@ class MarksScreen extends GetWidget<MarksController> {
                               // onChanged: (value) {
                               //   controller.onFallSelected(value);
                               // }),
+                              
                               CustomTextFormField(
                                   readonly: true,
                                   width: getHorizontalSize(147),

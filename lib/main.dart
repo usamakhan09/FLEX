@@ -1,11 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'auth.dart';
 import 'core/app_export.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main()async {
   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp(
+ options: DefaultFirebaseOptions.currentPlatform,
+).then((value) =>Get.lazyPut(()=>Auth()));
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]).then((value) {

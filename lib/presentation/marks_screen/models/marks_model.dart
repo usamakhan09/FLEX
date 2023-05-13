@@ -15,27 +15,23 @@ class MarksModel {
       isSelected: true,
     ),
   ].obs;
-  RxList<SelectionPopupModel> dropdownItemList = [
-    SelectionPopupModel(
-      id: 1,
-      title: "Design and Analysis Algorithm",
-      isSelected: true,
-    ),
-    SelectionPopupModel(
-      id: 2,
-      title: "Design and Analysis Algorithm",
-    ),
-    SelectionPopupModel(
-      id: 3,
-      title: "Design and Analysis Algorithm",
-    )
-  ].obs;
+  RxList<SelectionPopupModel> dropdownItemList =<SelectionPopupModel>[].obs;
 
-  RxList<MarksItemModel> marksItemList = [
-    MarksItemModel("lbl_assignment".tr.obs, "lbl_weightage".tr.obs,
-        "lbl_obtain_marks".tr.obs, "lbl_total_marks".tr.obs),
-    MarksItemModel("10".tr.obs, "10".tr.obs, "10".tr.obs, "10".tr.obs),
-    MarksItemModel("10".tr.obs, "10".tr.obs, "10".tr.obs, "10".tr.obs),
-    MarksItemModel("10".tr.obs, "10".tr.obs, "10".tr.obs, "10".tr.obs)
+  RxList<MarksItemModel> assignmentmarksItemList = [
+    MarksItemModel(assignmentTxt: "lbl_assignment".tr.obs, weightageTxt: "lbl_weightage".tr.obs,
+        obtainmarksTxt: "lbl_obtain_marks".tr.obs, totalmarksTxt: "lbl_total_marks".tr.obs),
+   
+  ].obs;
+  RxList<MarksItemModel> sessional1 = [
+  MarksItemModel(assignmentTxt: "lbl_assignment".tr.obs, weightageTxt: "lbl_weightage".tr.obs,
+        obtainmarksTxt: "lbl_obtain_marks".tr.obs, totalmarksTxt: "lbl_total_marks".tr.obs),
+  ].obs;
+  RxList<MarksItemModel> sessional2 = [
+   MarksItemModel(assignmentTxt: "lbl_assignment".tr.obs, weightageTxt: "lbl_weightage".tr.obs,
+        obtainmarksTxt: "lbl_obtain_marks".tr.obs, totalmarksTxt: "lbl_total_marks".tr.obs),
+  ].obs;
+  RxList<MarksItemModel> finalmarks = [
+   MarksItemModel(assignmentTxt: "lbl_assignment".tr.obs, weightageTxt: "lbl_weightage".tr.obs,
+        obtainmarksTxt: "lbl_obtain_marks".tr.obs, totalmarksTxt: "lbl_total_marks".tr.obs),
   ].obs;
 }

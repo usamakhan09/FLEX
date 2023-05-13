@@ -1,5 +1,6 @@
 import 'package:flex2/presentation/registration_one_page/registration_one_page.dart';
 
+import '../../auth.dart';
 import 'controller/profile_controller.dart';
 import 'package:flex2/core/app_export.dart';
 import 'package:flex2/core/utils/validation_functions.dart';
@@ -106,8 +107,9 @@ class ProfileScreen extends GetWidget<ProfileController> {
                         textAlign: TextAlign.left,
                         style: AppStyle.txtPoppinsMedium16Black900)),
                 GestureDetector(
-                    onTap: () {
-                      onTapTxtLogout();
+                    onTap: ()async {
+                     await Auth.instance.signOut();
+                     Get.toNamed(AppRoutes.signInScreen);
                     },
                     child: Padding(
                         padding: getPadding(top: 40),

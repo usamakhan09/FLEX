@@ -1,15 +1,14 @@
 import 'package:get/get.dart';
 
 class ListcodeItemModel {
-  ListcodeItemModel(this.codeTxt, this.coursenameTxt, this.chTxt, this.typeTxt,
-      {this.id});
-  Rx<String> codeTxt;
+  ListcodeItemModel({required this.codeTxt, required this.coursenameTxt,required this.chTxt, required this.typeTxt,this.id});
+  String codeTxt;
 
-  Rx<String> coursenameTxt;
+  String coursenameTxt;
 
-  Rx<String> chTxt;
+  String chTxt;
 
-  Rx<String> typeTxt;
+  String typeTxt;
 
   String? id = "";
 }

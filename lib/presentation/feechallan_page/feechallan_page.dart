@@ -80,68 +80,155 @@ class FeechallanPage extends StatelessWidget {
                                                 Padding(
                                                     padding:
                                                         getPadding(left: 183),
-                                                    child: Text("lbl_100000".tr,
+                                                    child: Obx(()=> Text("${controller.courses.value.amount}",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsRegular14)))
+                                              ])),
+                                          Padding(
+                                              padding: getPadding(top: 23),
+                                              child: Row(
+                                                children: [
+                                                  Text("lbl_due_date".tr,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsRegular12),
+                                                          Spacer(),
+                                                          Padding(
+                                                    padding:
+                                                        getPadding(left: 183),
+                                                    child:Obx(()=> Text("${controller.courses.value.dueDate}",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsRegular14)))
+                                                ],
+                                              )),
+                                          Padding(
+                                              padding: getPadding(top: 25),
+                                              child: Row(
+                                                children: [
+                                                  Text("lbl_status".tr,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsRegular12),
+                                                          Spacer(),
+
+                                                          Obx(()=> Text("${controller.courses.value.status}",
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         textAlign:
                                                             TextAlign.left,
                                                         style: AppStyle
                                                             .txtPoppinsRegular14))
-                                              ])),
-                                          Padding(
-                                              padding: getPadding(top: 23),
-                                              child: Text("lbl_due_date".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtPoppinsRegular12)),
+                                                ],
+                                              )),
                                           Padding(
                                               padding: getPadding(top: 25),
-                                              child: Text("lbl_status".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtPoppinsRegular12)),
-                                          Padding(
-                                              padding: getPadding(top: 25),
-                                              child: Text("lbl_generated_on".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtPoppinsRegular12)),
+                                              child: Row(
+                                                children: [
+                                                  Text("lbl_generated_on".tr,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsRegular12),
+                                                          Spacer(),
+
+                                                          Obx(()=> Text("${controller.courses.value.generatedOn}",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsRegular14))
+                                                ],
+                                              )),
                                           Container(
                                               width: getHorizontalSize(96),
                                               margin: getMargin(top: 26),
-                                              child: Text(
-                                                  "msg_print_challan_for".tr,
-                                                  maxLines: null,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtPoppinsRegular12)),
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                                                children: [
+                                                  Text(
+                                                      "msg_print_challan_for".tr,
+                                                      maxLines: null,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsRegular12),
+                                                          
+                                                          // Spacer(),
+
+                                                          Obx(()=> Text("                         ${controller.courses.value.printChallan}",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsRegular14))
+                                                ],
+                                              )),
                                           Container(
                                               width: getHorizontalSize(110),
                                               margin:
                                                   getMargin(left: 3, top: 48),
-                                              child: Text(
-                                                  "msg_kuickpay_payment".tr,
-                                                  maxLines: null,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtPoppinsRegular12)),
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                
+                                                children: [
+                                                  Text(
+                                                      "msg_kuickpay_payment".tr,
+                                                      maxLines: null,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsRegular12),
+                                                          // Spacer(),
+
+                                                          Obx(()=> Text("                                ${controller.courses.value.quickPaymentDetail}",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsRegular14))
+                                                ],
+                                              )),
                                           Container(
                                               width: getHorizontalSize(87),
                                               margin:
                                                   getMargin(top: 40, bottom: 4),
-                                              child: Text(
-                                                  "msg_online_paymet_through"
-                                                      .tr,
-                                                  maxLines: null,
-                                                  textAlign: TextAlign.left,
-                                                  style: AppStyle
-                                                      .txtPoppinsRegular12))
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                      "msg_online_paymet_through"
+                                                          .tr,
+                                                      maxLines: null,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsRegular12),
+
+                                                          Obx(()=> Text("                           ${controller.courses.value.onlinePaymentThroughNift}",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsRegular14))
+                                                ],
+                                              ))
+                                        
+                                        
                                         ]))),
                             Align(
                                 alignment: Alignment.topCenter,

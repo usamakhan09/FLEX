@@ -20,16 +20,17 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
                 child: Container(
                     width: double.maxFinite,
                     padding: getPadding(left: 34, top: 89, right: 34),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                    child: ListView(
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           CustomImageView(
                               imagePath: ImageConstant.imgImage1,
                               height: getVerticalSize(119),
                               width: getHorizontalSize(318),
                               alignment: Alignment.center),
-                          Spacer(),
+                          // Spacer(),
+                          SizedBox(height: 50,),
                           Container(
                               margin: getMargin(left: 4),
                               decoration: AppDecoration.txtOutlineBlack9003f,
@@ -67,7 +68,9 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
                               height: getVerticalSize(50),
                               text: "lbl_send".tr,
                               margin: getMargin(left: 4, top: 72),
-                              onTap: onTapSend),
+                              onTap: ()async{
+                                await controller.forgetpass();
+                              }),
                           GestureDetector(
                               onTap: () {
                                 onTapTxtBacktosignin();

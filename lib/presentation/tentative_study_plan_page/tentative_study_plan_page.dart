@@ -97,87 +97,253 @@ class TentativeStudyPlanPage extends StatelessWidget {
           decoration: AppDecoration.fillGray50.copyWith(
             borderRadius: BorderRadiusStyle.roundedBorder10,
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: getPadding(
-                  left: 7,
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      height: getSize(
-                        10,
-                      ),
-                      width: getSize(
-                        10,
-                      ),
-                      margin: getMargin(
-                        top: 13,
-                        bottom: 12,
-                      ),
-                      decoration: BoxDecoration(
-                        color: ColorConstant.black900,
-                        borderRadius: BorderRadius.circular(
-                          getHorizontalSize(
-                            5,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: getPadding(
+                    left: 7,
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: getSize(
+                          10,
+                        ),
+                        width: getSize(
+                          10,
+                        ),
+                        margin: getMargin(
+                          top: 13,
+                          bottom: 12,
+                        ),
+                        decoration: BoxDecoration(
+                          color: ColorConstant.black900,
+                          borderRadius: BorderRadius.circular(
+                            getHorizontalSize(
+                              5,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: getPadding(
-                        left: 6,
-                      ),
-                      child: Text(
-                        "lbl_semester_no_1".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtPoppinsMedium24,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: getMargin(
-                  top: 7,
-                ),
-                padding: getPadding(
-                  all: 20,
-                ),
-                decoration: AppDecoration.outlineGray400.copyWith(
-                  borderRadius: BorderRadiusStyle.roundedBorder10,
-                ),
-                child: Obx(
-                  () => ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        height: getVerticalSize(
-                          3,
+                      Padding(
+                        padding: getPadding(
+                          left: 6,
                         ),
-                      );
-                    },
-                    itemCount: controller.tentativeStudyPlanModelObj.value
-                        .listcodeItemList.length,
-                    itemBuilder: (context, index) {
-                      ListcodeItemModel model = controller
-                          .tentativeStudyPlanModelObj
-                          .value
-                          .listcodeItemList[index];
-                      return ListcodeItemWidget(
-                        model,
-                      );
-                    },
+                        child: Text(
+                          "lbl_semester_no_1".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtPoppinsMedium24,
+                        ),
+                      ),
+                    
+                    
+                    ],
                   ),
                 ),
-              ),
-            ],
+                Container(
+                  margin: getMargin(
+                    top: 7,
+                  ),
+                  padding: getPadding(
+                    all: 20,
+                  ),
+                  decoration: AppDecoration.outlineGray400.copyWith(
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Obx(
+                    () => ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          height: getVerticalSize(
+                            3,
+                          ),
+                        );
+                      },
+                      itemCount: controller.tentativeStudyPlanModelObj.value
+                          .Sem1listcodeItemList.length,
+                      itemBuilder: (context, index) {
+                        ListcodeItemModel model = controller
+                            .tentativeStudyPlanModelObj
+                            .value
+                            .Sem1listcodeItemList[index];
+                        return ListcodeItemWidget(
+                          model,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+          
+                  Padding(
+                  padding: getPadding(
+                    left: 7,
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: getSize(
+                          10,
+                        ),
+                        width: getSize(
+                          10,
+                        ),
+                        margin: getMargin(
+                          top: 13,
+                          bottom: 12,
+                        ),
+                        decoration: BoxDecoration(
+                          color: ColorConstant.black900,
+                          borderRadius: BorderRadius.circular(
+                            getHorizontalSize(
+                              5,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: getPadding(
+                          left: 6,
+                        ),
+                        child: Text(
+                          "Semester No: 2".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtPoppinsMedium24,
+                        ),
+                      ),
+                    
+                    
+                    ],
+                  ),
+                ),
+          
+                Container(
+                  margin: getMargin(
+                    top: 7,
+                  ),
+                  padding: getPadding(
+                    all: 20,
+                  ),
+                  decoration: AppDecoration.outlineGray400.copyWith(
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Obx(
+                    () => ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          height: getVerticalSize(
+                            3,
+                          ),
+                        );
+                      },
+                      itemCount: controller.tentativeStudyPlanModelObj.value
+                          .Sem2listcodeItemList.length,
+                      itemBuilder: (context, index) {
+                        ListcodeItemModel model = controller
+                            .tentativeStudyPlanModelObj
+                            .value
+                            .Sem1listcodeItemList[index];
+                        return ListcodeItemWidget(
+                          model,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              
+          
+            Padding(
+                  padding: getPadding(
+                    left: 7,
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: getSize(
+                          10,
+                        ),
+                        width: getSize(
+                          10,
+                        ),
+                        margin: getMargin(
+                          top: 13,
+                          bottom: 12,
+                        ),
+                        decoration: BoxDecoration(
+                          color: ColorConstant.black900,
+                          borderRadius: BorderRadius.circular(
+                            getHorizontalSize(
+                              5,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: getPadding(
+                          left: 6,
+                        ),
+                        child: Text(
+                          "Semester No: 3".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtPoppinsMedium24,
+                        ),
+                      ),
+                    
+                    
+                    ],
+                  ),
+                ),
+          
+                Container(
+                  margin: getMargin(
+                    top: 7,
+                  ),
+                  padding: getPadding(
+                    all: 20,
+                  ),
+                  decoration: AppDecoration.outlineGray400.copyWith(
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Obx(
+                    () => ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          height: getVerticalSize(
+                            3,
+                          ),
+                        );
+                      },
+                      itemCount: controller.tentativeStudyPlanModelObj.value
+                          .Sem3listcodeItemList.length,
+                      itemBuilder: (context, index) {
+                        ListcodeItemModel model = controller
+                            .tentativeStudyPlanModelObj
+                            .value
+                            .Sem3listcodeItemList[index];
+                        return ListcodeItemWidget(
+                          model,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              
+          
+          
+              ],
+            ),
           ),
         ),
       ),

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class Listcs2009ItemWidget extends StatelessWidget {
   Listcs2009ItemWidget(this.listcs2009ItemModelObj);
 
-  Listcs2009ItemModel listcs2009ItemModelObj;
+  Course listcs2009ItemModelObj;
 
   var controller = Get.find<RegistrationOneController>();
 
@@ -33,7 +33,7 @@ class Listcs2009ItemWidget extends StatelessWidget {
               bottom: 13,
             ),
             child: Text(
-              "lbl_cs2009".tr,
+              listcs2009ItemModelObj.code,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsBold14,
@@ -48,7 +48,7 @@ class Listcs2009ItemWidget extends StatelessWidget {
               top: 3,
             ),
             child: Text(
-              "msg_design_and_analysis".tr,
+             listcs2009ItemModelObj.name,
               maxLines: null,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsBold14,

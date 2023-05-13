@@ -20,13 +20,12 @@ class ListcodeItemWidget extends StatelessWidget {
           padding: getPadding(
             bottom: 2,
           ),
-          child: Obx(
-            () => Text(
-              listcodeItemModelObj.codeTxt.value,
+          child: Text(
+              listcodeItemModelObj.codeTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium16Black900,
-            ),
+            
           ),
         ),
         Spacer(),
@@ -35,14 +34,14 @@ class ListcodeItemWidget extends StatelessWidget {
             left: 43,
             bottom: 2,
           ),
-          child: Obx(
-            () => Text(
-              listcodeItemModelObj.coursenameTxt.value,
+          child: Text(
+              
+              listcodeItemModelObj.coursenameTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium16Black900,
             ),
-          ),
+        
         ),
         Spacer(),
         Padding(
@@ -50,14 +49,13 @@ class ListcodeItemWidget extends StatelessWidget {
             left: 43,
             bottom: 2,
           ),
-          child: Obx(
-            () => Text(
-              listcodeItemModelObj.chTxt.value,
+          child:  Text(
+              listcodeItemModelObj.chTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium16Black900,
             ),
-          ),
+          
         ),
         Spacer(),
         Padding(
@@ -65,14 +63,13 @@ class ListcodeItemWidget extends StatelessWidget {
             left: 30,
             top: 2,
           ),
-          child: Obx(
-            () => Text(
-              listcodeItemModelObj.typeTxt.value,
+          child:Text(
+              listcodeItemModelObj.typeTxt,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtPoppinsMedium16Black900,
             ),
-          ),
+          
         ),
       ],
     );

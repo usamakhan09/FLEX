@@ -1,20 +1,20 @@
 import 'package:get/get.dart';
 
 class TranscriptItemModel {
-  TranscriptItemModel(this.codeTxt,this.coursenameTxt,this.crdhrsTxt,this.gradeTxt,this.pointsTxt,this.sectionTxt,this.typeTxt,{this.id});
-  Rx<String> codeTxt = Rx("lbl_code".tr);
+  TranscriptItemModel({required this.codeTxt,required this.coursenameTxt,required this.crdhrsTxt,required this.gradeTxt,required this.pointsTxt,required this.sectionTxt,required this.typeTxt,this.id});
+  String codeTxt = "lbl_code";
 
-  Rx<String> coursenameTxt = Rx("lbl_course_name".tr);
+  String coursenameTxt = "lbl_course_name";
 
-  Rx<String> sectionTxt = Rx("lbl_section".tr);
+  String sectionTxt = "lbl_section";
 
-  Rx<String> crdhrsTxt = Rx("lbl_crdhrs".tr);
+  String crdhrsTxt = "lbl_crdhrs";
 
-  Rx<String> gradeTxt = Rx("lbl_grade".tr);
+  String gradeTxt = "lbl_grade";
 
-  Rx<String> pointsTxt = Rx("lbl_points".tr);
+  String pointsTxt = "lbl_points";
 
-  Rx<String> typeTxt = Rx("lbl_type".tr);
+  String typeTxt = "lbl_type";
 
   String? id = "";
 }
